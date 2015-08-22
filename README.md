@@ -1,7 +1,7 @@
 mithril.text-with-ontextchange
 ==============================
 
-This library contains two components `TextInput` and `TextArea`.
+This library contains two components `TextInput` and `TextArea` for [Mithril](http://mithril.js.org/index.html).
 These components have the `ontextchange` attribute, which is similar to `oninput` but different.
 
 * `textchange` events are not dispatched between `compositionstart` and `compositionend` events.
