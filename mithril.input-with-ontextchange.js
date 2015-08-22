@@ -21,21 +21,20 @@ var TextInput, TextArea
               }
             }
         return {
-          config: function(elem, isInitialized) {
+          config: function(elem, isInitialized, context) {
             if (!isInitialized) {
               element = elem
               oldValue = element.value
               element.addEventListener('compositionstart', setComposing)
               element.addEventListener('compositionend', resetComposing)
               element.addEventListener('input', onInput)
+              context.onunload = function() {
+                element.removeEventListener('compositionstart', setComposing)
+                element.removeEventListener('compositionend', resetComposing)
+                element.removeEventListener('input', onInput)
+              }
             }
-          },
-          onunload: function() {
-            element.removeEventListener('compositionstart', setComposing)
-            element.removeEventListener('compositionend', resetComposing)
-            element.removeEventListener('input', onInput)
-          },
-          oninput: onInput
+          }
         }
       },
       view: function(ctrl, args) {
