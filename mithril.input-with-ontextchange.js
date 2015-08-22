@@ -11,7 +11,7 @@ var TextInput, TextArea
             resetComposing = function() { composing = false },
             onInput = function(e) {
               if (!composing && e.target.value !== oldValue) {
-                if (args.ontextchange) {
+                if (args && args.ontextchange) {
                   args.ontextchange({
                     currentTarget: element,
                     target: element
