@@ -1,4 +1,4 @@
-var myApplication = {
+var app = {
   vm: {
     title: m.prop('title'),
     description: m.prop('description')
@@ -16,17 +16,19 @@ var myApplication = {
     return m('div', [
       m('div', [
         ctrl.textPresent() ?
-          m.component(TextInput,
-              {ontextchange: m.withAttr('value', myApplication.vm.title), value: myApplication.vm.title()}) : null,
+          m.component(TextInput, {
+            ontextchange: m.withAttr('value', app.vm.title),
+            value: app.vm.title()
+          }) : null,
         m('button', {onclick: ctrl.removeText}, 'Remove title input')
       ]),
       m.component(TextArea, {
         cols: 40, rows: 10,
-        ontextchange: m.withAttr('value', myApplication.vm.description),
-        value: myApplication.vm.description()
+        ontextchange: m.withAttr('value', app.vm.description),
+        value: app.vm.description()
       })
     ])
   }
 }
 
-m.mount(document.getElementById('root'), myApplication)
+m.mount(document.getElementById('root'), app)
