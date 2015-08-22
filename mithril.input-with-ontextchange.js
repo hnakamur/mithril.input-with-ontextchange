@@ -11,17 +11,11 @@ var TextInput, TextArea
             resetComposing = function() { composing = false },
             onInput = function(e) {
               if (!composing && e.target.value !== oldValue) {
-                var ev = new CustomEvent('textchange', {
-                  detail: {
-                    value: e.target.value,
-                    oldValue: oldValue
-                  },
-                  bubbles: true,
-                  cancelable: false
-                })
-                e.target.dispatchEvent(ev)
                 if (args.ontextchange) {
-                  args.ontextchange(ev)
+                  args.ontextchange({
+                    currentTarget: element,
+                    target: element
+                  })
                 }
                 oldValue = e.target.value
               }
