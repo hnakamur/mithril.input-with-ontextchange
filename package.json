@@ -1,0 +1,28 @@
+{
+  "name": "mithril.input-with-ontextchange",
+  "version": "0.1.0",
+  "description": "TextInput and TextArea components for Mithril for inputting texts with Japanese IME ",
+  "main": "mithril.input-with-ontextchange.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnakamur/mithril.input-with-ontextchange.git"
+  },
+  "keywords": [
+    "Mithril.js"
+  ],
+  "author": "Hiroaki Nakamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hnakamur/mithril.input-with-ontextchange/issues"
+  },
+  "homepage": "https://github.com/hnakamur/mithril.input-with-ontextchange#readme",
+  "dependencies": {
+    "mithril": "^0.2.0"
+  }
+}
